@@ -1,0 +1,549 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-range-end: inherit;
+}
+.homepage {
+  display: flex;
+  justify-content: center;
+}
+.login_page {
+  width: 27%;
+  margin: auto;
+  height: fit-content;
+  box-shadow: 1px 1px 6px rgb(3, 196, 239);
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login_box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.login_box h1 {
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  flex-direction: column;
+  padding: 0;
+  margin: 20px;
+  font-size: 22px;
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+.login_form input {
+  font-size: 20px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: start;
+  border-radius: 0.5rem;
+}
+.login_form input:focus {
+  outline: 1px solid green;
+}
+.login_form input[type="submit"] {
+  background: blue;
+  border: none;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.login_form p {
+  text-align: start;
+  padding-left: 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2a0af6;
+}
+.google_login {
+  padding: 10px;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 7px rgb(15, 18, 15);
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.google_login i {
+  font-size: 18px;
+  padding-right: 6px;
+  color: #2a0af6;
+}
+
+/* *************************************************signup page *********************************************************** */
+.sign_page {
+  display: flex;
+  width: 30%;
+  position: absolute;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 7px rgb(3, 196, 239);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+}
+.form_signup {
+  display: flex;
+  flex-direction: column;
+}
+.sign_up {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+.sign_page h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 0%;
+  margin: 10px 0;
+}
+.sign_up input {
+  font-size: 20px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: start;
+  border-radius: 0.5rem;
+}
+
+.form_signup button {
+  width: 90%;
+  margin: auto;
+  padding: 8px;
+  border-radius: 0.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 6px rgb(3, 196, 239);
+  background: blue;
+  font-weight: 700;
+  color: white;
+}
+.form_signup button:hover {
+  background: rgb(237, 208, 18);
+  color: blue;
+}
+.form_signup button:focus {
+  background-color: rgb(0, 164, 11);
+  color: rgb(244, 249, 244);
+}
+.form_signup .sign_up p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(1, 16, 17);
+  text-shadow: 1px 1px 3px rgb(200, 246, 200);
+}
+/* * ********************************************************Header**************************************************** */
+.header {
+  width: 100%;
+  font-size: 1.3rem;
+  color: rgb(255, 253, 250);
+  box-shadow: 1px 1px 1px gray;
+  display: flex;
+  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 5px;
+  z-index: 1000;
+  background-color: #2a0af6;
+}
+.header .headerList {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  gap: 20px;
+  transition: all 0.4s ease-in-out;
+}
+.header .headerList .headerLinks {
+  cursor: pointer;
+  padding: 4px;
+  color: rgb(255, 255, 255);
+}
+/* ************************************************************Profile**************************************************** */
+.Content {
+  max-width: 110%;
+  width: 110%;
+}
+.Content .Container {
+  gap: 7px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding-top: 40px;
+  width: fit-content;
+  margin: auto;
+  overflow-y: hidden;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+.Profile_container {
+  display: flex;
+  width: 100%;
+  text-wrap: wrap;
+  overflow-y: auto;
+}
+.Profile_container .Profile_Div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: fit-content;
+  margin: 4px;
+  border-radius: 0.4rem;
+  overflow-x: hidden;
+  box-shadow: 3px 1px 5px rgb(55, 55, 55);
+}
+.Profile_Div .MenuOptionDIV {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+.Profile_Div .MenuOption {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.Profile_Div .MenuOptionDIV .OptionMenu {
+  box-shadow: 1px 1px 2px grey;
+  text-align: center;
+  font-size: 1rem;
+  position: absolute;
+  top: 65px;
+  display: none;
+  animation-name: animator;
+  transition: all 1s linear;
+  z-index: 1000;
+  color: aliceblue;
+  background-color: #000000;
+}
+@keyframes animator {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.Profile_Div .MenuOptionDIV .OptionMenu p:first-child {
+  box-shadow: 1px 1px 4px black;
+  cursor: pointer;
+  padding: 3px 10px;
+}
+.Profile_Div .MenuOptionDIV .OptionMenu p:hover {
+  background: goldenrod;
+  color: white;
+}
+.Profile_Div .ContainerImage {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  max-width: 280px;
+  max-height: 200px;
+  padding: 0 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
+}
+.Profile_Div .ContainerImage .ProfileImage {
+  border-radius: 50%;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  object-fit: center;
+}
+.Profile_Div .ContainerImage .ChooseImage {
+  display: flex;
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  font-size: 5vh;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: rgb(86, 86, 86);
+}
+.btnClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: blueviolet;
+  color: white;
+  font-size: 1rem;
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-shadow: 1px 1px 2px gray;
+}
+/* *********************************************************body******************************************************* */
+
+.Blog_Post {
+  overflow-y: auto;
+  padding: 10px;
+  text-transform: capitalize;
+  width: 750px;
+  margin: 10px auto;
+}
+.Blog_Post::-webkit-scrollbar {
+  display: none;
+}
+
+/* /* **********************************************************createBlog************************************************** */
+.createBlog {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  max-width: 800px;
+}
+.createBlog .createBlog_header {
+  display: flex;
+  flex-direction: column;
+}
+.createBlog .createBlog_header h1 {
+  font-size: 1.4rem;
+  padding: 15px 0;
+  color: blue;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px grey;
+  letter-spacing: 3px;
+}
+.createBlog .createBlog_header h1 span {
+  color: rgb(1, 113, 22);
+  font-size: 1.6rem;
+  text-shadow: 1px 1px 3px grey;
+}
+.createBlog .createBlog_header p {
+  letter-spacing: 3px;
+  padding: 10px;
+  color: rgb(1, 41, 36);
+  text-shadow: 1px 1px 2px rgb(6, 85, 231);
+  font-size: 1.2rem;
+}
+.createBlog_create_container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.createBlog_create_container .postTitle {
+  margin: 20px 0;
+  font-weight: 800;
+}
+.createBlog_create_container .discription {
+  margin: 5px 0px;
+  padding: 3px;
+}
+.createBlog_create_container .PostImage {
+  position: relative;
+  width: 65%;
+  border-radius: 0.2rem;
+  height: 300px;
+  box-shadow: 1px 2px 1px rgb(103, 102, 102);
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.createBlog_create_container .PostImage .imageOfPost {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+.PostImage .photoadd {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  color: rgb(193, 190, 187);
+  transform: translate(-50%, -50%);
+}
+.PostImage .photoadd .photo1 {
+  font-size: 50px;
+}
+.ButtonPostUpload {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.ButtonPostUpload .button {
+  width: 90%;
+  font-weight: 700;
+}
+/* *************************************************************Post******************************************************* */
+.Blog_Post .UserSPost {
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  max-width: 750px;
+  flex-direction: column;
+  padding: 10px;
+  overflow-x: none;
+}
+.Blog_Post .UserSPost .posts {
+  box-shadow: 1px 2px 7px rgb(28, 26, 26);
+  padding: 7px;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.Blog_Post .UserSPost .posts .headerPost {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+  border-radius: 0.5rem;
+}
+
+.Blog_Post .UserSPost .posts .headerPost .postProfileImage {
+  width: 60px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 60px;
+  margin: 10px;
+  object-fit: cover;
+}
+.Blog_Post .UserSPost .posts .headerPost .TitleName {
+  display: flex;
+  flex-direction: row;
+  width: 86%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1px;
+}
+
+.Blog_Post .UserSPost .posts .headerPost .TitleName .PostsMenu {
+  cursor: pointer;
+}
+
+.Blog_Post .UserSPost .posts .headerPost .TitleName h1 {
+  font-size: 22px;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.Blog_Post .UserSPost .posts .headerPost .TitleName span {
+  font-size: 18px;
+  color: rgb(31, 31, 31);
+  font-style: oblique;
+}
+.Blog_Post .UserSPost .posts .PostPhotoContainer {
+  display: flex;
+  padding: 2px;
+  flex-direction: column;
+}
+.Blog_Post .UserSPost .posts .PostPhotoContainer img {
+  width: 98%;
+  object-fit: fill;
+  height: 260px;
+  margin: auto;
+  cursor: context-menu;
+  transition: all 0.6s linear;
+}
+.Blog_Post .UserSPost .posts .PostPhotoContainer .liked_Details {
+  margin-top: 9px;
+  padding-left: 5px;
+  text-transform: none;
+  color: green;
+  font-size: 1.03rem;
+  text-shadow: 1px 1px 2px rgb(51, 249, 51);
+  display: flex;
+}
+.Blog_Post .UserSPost .posts .PostPhotoContainer img:hover {
+  box-shadow: 1px 1px 3px rgb(188, 187, 187);
+}
+.Blog_Post .UserSPost .posts .PostPhotoContainer .likeCommentConatiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  gap: 20px;
+}
+.Blog_Post .UserSPost .posts .postDiscriptionContainer {
+  display: flex;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 4px rgb(214, 212, 212);
+  flex-direction: column;
+  align-items: baseline;
+  padding: 5px;
+  width: 99%;
+  max-width: 100%;
+  margin: 1px auto;
+}
+.Blog_Post .UserSPost .posts .postDiscriptionContainer .discriptionsPost {
+  display: flex;
+  align-items: baseline;
+  /* margin-left:15px; */
+}
+.Blog_Post .UserSPost .posts .postDiscriptionContainer .discriptionsPost h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.Blog_Post .UserSPost .posts .postDiscriptionContainer .discriptionsPost div {
+  font-size: 17px;
+  color: #656567;
+  font-weight: 400;
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: justify;
+  text-transform: capitalize;
+  padding: 2px;
+}
+.Blog_Post
+  .UserSPost
+  .posts
+  .postDiscriptionContainer
+  .discriptionsPost
+  div
+  .userDiscription {
+  font-weight: 700;
+  padding: 0;
+  font-size: 1rem;
+  text-decoration-line: underline;
+  color: #252525;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.Blog_Post .UserSPost .posts .postDiscriptionContainer .PostedTime {
+  font-size: 1rem;
+  padding-left: 1px;
+  color: rgb(57, 56, 56);
+}
+
+
