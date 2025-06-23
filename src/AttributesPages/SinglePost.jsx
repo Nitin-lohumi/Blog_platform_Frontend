@@ -20,7 +20,8 @@ const SinglePost = ({
   const DeletePostByOwner = async (postId) => {
     try {
       const res = await axios.delete(
-        `http://13.60.32.184:3000/delete/postId/${postId}`
+        `http://13.60.32.184:3000/delete/postId/${postId}`,
+        { withCredentials: true }
       );
     } catch (error) {
       console.log(error);
@@ -87,9 +88,9 @@ const SinglePost = ({
             )}
           </div>
           <div className="likeCommentConatiner">
-            <button  onClick={() => submitLike(p._id)}>
+            <button onClick={() => submitLike(p._id)}>
               {p.isliked ? (
-                <FaHeart size={40} color="red"/>
+                <FaHeart size={40} color="red" />
               ) : (
                 <CiHeart size={40} color="black" />
               )}

@@ -13,7 +13,6 @@ const Login = () => {
 
   const handleSubmit_Logindata = async (e) => {
     e.preventDefault();
-    console.log(LoginData);
     if (!LoginData.email || !LoginData.password) {
       toast.error("email or password is not filled");
     }

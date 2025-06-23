@@ -22,7 +22,8 @@ const Post = ({
     if (NavigateProfile) {
       try {
         const res = await axios.get(
-          `http://13.60.32.184:3000/posts/OnlyUserPosts/${contextValue.ProfileData._id}`
+          `http://13.60.32.184:3000/posts/OnlyUserPosts/${contextValue.ProfileData._id}`,
+          { withCredentials: true }
         );
         const updatedPosts = res.data.posts.map((post) => ({
           ...post,
@@ -42,7 +43,8 @@ const Post = ({
       if (contextValue?.ProfileData?._id) {
         try {
           const res = await axios.get(
-            `http://13.60.32.184:3000/posts/BlogPosts/${contextValue.ProfileData._id}`
+            `http://13.60.32.184:3000/posts/BlogPosts/${contextValue.ProfileData._id}`,
+            { withCredentials: true }
           );
           const updatedPosts = res.data.map((post) => ({
             ...post,
@@ -75,7 +77,10 @@ const Post = ({
       const res = await axios.post(
         `http://13.60.32.184:3000/posts/BlogPost/like/${contextValue.ProfileData._id}`,
         { postId },
-        { headers: { "Content-Type": "application/json" } }
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
       );
       if (res.data) {
         setPosts((prevPosts) =>
@@ -106,17 +111,17 @@ const Post = ({
     } else {
       try {
         const res = await axios.get(
-          `http://13.60.32.184:3000/posts/BlogPost/showcomments/${post_id}`
+          `http://13.60.32.184:3000/posts/BlogPost/showcomments/${post_id}`,
+          { withCredentials: true }
         );
-        setComment(post_id); 
-        setcommentsSec(res.data.post.comments); 
+        setComment(post_id);
+        setcommentsSec(res.data.post.comments);
       } catch (error) {
         console.log(error);
         setcommentsSec([]);
       }
     }
   }
-  
 
   return (
     <>
@@ -132,18 +137,18 @@ const Post = ({
           </div>
         ) : posts.length ? (
           posts.map((p) => (
-              <SinglePost
-                p={p}
-                key={p._id}
-                setPostIds={setPostIds}
-                handleToggleDescription={handleToggleDescription}
-                submitLike={submitLike}
-                expandedDescriptions={expandedDescriptions}
-                NavigateProfile={NavigateProfile}
-                handleCommentSection={handleCommentSection}
-                comment={comment}
-                commentsSec={commentsSec}
-              />
+            <SinglePost
+              p={p}
+              key={p._id}
+              setPostIds={setPostIds}
+              handleToggleDescription={handleToggleDescription}
+              submitLike={submitLike}
+              expandedDescriptions={expandedDescriptions}
+              NavigateProfile={NavigateProfile}
+              handleCommentSection={handleCommentSection}
+              comment={comment}
+              commentsSec={commentsSec}
+            />
           ))
         ) : (
           <div>

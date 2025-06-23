@@ -17,7 +17,8 @@ const CommentSection = ({ commentsSec, comment }) => {
     try {
       const res = await axios.post(
         `http://13.60.32.184:3000/posts/BlogPost/comment/${values.ProfileData._id}`,
-        { postId, text: commentChange }
+        { postId, text: commentChange },
+        { withCredentials: true }
       );
 
       const newComment = res.data.comment;
@@ -32,7 +33,8 @@ const CommentSection = ({ commentsSec, comment }) => {
     try {
       const res = await axios.post(
         `http://13.60.32.184:3000/posts/BlogPost/commentDelete/${values.ProfileData._id}`,
-        { postId: postId, commentId: commentId }
+        { postId: postId, commentId: commentId },
+        { withCredentials: true }
       );
       if (res.data) {
         setPostComment((prev) => prev.filter((c) => c._id !== commentId));
@@ -79,7 +81,7 @@ const CommentSection = ({ commentsSec, comment }) => {
               {v.userId === values.ProfileData._id ? (
                 <button
                   className="m-0 pl-5"
-                  style={{color:"red"}}
+                  style={{ color: "red" }}
                   onClick={() => handledeletecomment(v._id, comment)}
                 >
                   <RiDeleteBinLine />
@@ -93,21 +95,29 @@ const CommentSection = ({ commentsSec, comment }) => {
       ) : (
         <p>No comments yet</p>
       )}
-      <div className="flex items-center justify-center  mt-3 p-1" style={{display:"flex",justifyContent:"space-between",width:"100%",paddingBottom:"10px"}}>
+      <div
+        className="flex items-center justify-center  mt-3 p-1"
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+          paddingBottom: "10px",
+        }}
+      >
         <div className="w-full">
           <input
             type="text"
             className="w-full p-2"
             placeholder="Send Comments..."
-            style={{padding:"10px",width:"100%"}}
+            style={{ padding: "10px", width: "100%" }}
             value={commentChange}
             onChange={(e) => setCommentsChange(e.target.value)}
           />
         </div>
-        <div style={{width:"10%"}}>
+        <div style={{ width: "10%" }}>
           <button
             className="text-white bg-green-600"
-            style={{padding:"10px"}}
+            style={{ padding: "10px" }}
             onClick={() => handleChangeSend(comment)}
           >
             Send
